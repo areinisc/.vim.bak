@@ -1,0 +1,6 @@
+[submodule "bundle/Obvious-Mode"]
+	path = bundle/Obvious-Mode
+	url = https://github.com/vim-scripts/Obvious-Mode.git
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
