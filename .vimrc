@@ -71,7 +71,17 @@ set hlsearch		" highlights searches
 " pressing \<space> clears the search highlights
 nmap <silent> <leader><space> :nohlsearch<CR>
 
+nnoremap <f1> :NERDTreeToggle<CR>
+
 set noswapfile
+
+nnoremap <f6> :!ctags -R<cr>
+
+nmap <silent> <leader><CR> i<CR><ESC>
+
+nmap <silent> <leader>o o<ESC>
+nmap <silent> <leader>O O<ESC>
+
 set nobackup
 set nowb
 
