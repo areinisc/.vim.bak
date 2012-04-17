@@ -11,6 +11,7 @@
 "	    for OpenVMS:  sys$login:.vimrc
 
 "   ~~~~~~~~~~~~~~~~~~~~~~~~~~  "
+"       TOP                     "
 "   From terminally-incoherent  "
 "   Changed on 02 April 2012    "
 "   ~~~~~~~~~~~~~~~~~~~~~~~~~~  "
@@ -95,10 +96,13 @@ set background=light
 colorscheme solarized
 
 "   ~~~~~~~~~~~~~~~~~~~~~~~~~~  "
+"       BOTTOM                  "
 "   From terminally-incoherent  "
 "   Changed on 02 April 2012    "
 "   ~~~~~~~~~~~~~~~~~~~~~~~~~~  "
 
+" stops cursor from blinking
+set guicursor=a:blinkon0
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -116,6 +120,7 @@ if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
   set backup		" keep a backup file
+  set backupdir=~/.vim/backup   " send backups here
 endif
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
