@@ -9,6 +9,46 @@
 "	      for Amiga:  s:.vimrc
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
+"
+"
+" Here I am changing solarized theme toggle from F5 to F4 so it doesn't
+" conflict with vim-latex
+nmap <unique> <F4> <Plug>ToggleBackground
+imap <unique> <F4> <Plug>ToggleBackground
+vmap <unique> <F4> <Plug>ToggleBackground
+"
+"   ~~~~~~~~~~~~~~~~~~~~~~~~~~  "
+"       TOP                     "
+"   From vim-latex              "
+"   Changed on 01 April 2013    "
+"   ~~~~~~~~~~~~~~~~~~~~~~~~~~  "
+" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+filetype plugin on
+
+" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+"set shellslash
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
+"   ~~~~~~~~~~~~~~~~~~~~~~~~~~  "
+"       BOTTOM                  "
+"   From vim-latex              "
+"   Changed on 01 April 2013    "
+"   ~~~~~~~~~~~~~~~~~~~~~~~~~~  "
+
+
 
 "   ~~~~~~~~~~~~~~~~~~~~~~~~~~  "
 "       TOP                     "
@@ -72,7 +112,7 @@ set hlsearch		" highlights searches
 " pressing \<space> clears the search highlights
 nmap <silent> <leader><space> :nohlsearch<CR>
 
-nnoremap <f1> :NERDTreeToggle<CR>
+nnoremap <f3> :NERDTreeToggle<CR>
 
 set noswapfile
 
@@ -92,8 +132,10 @@ nnoremap ; :
 call pathogen#infect()
 
 syntax enable
+if has("gui_running") 
 set background=light
 colorscheme solarized
+endif
 
 "   ~~~~~~~~~~~~~~~~~~~~~~~~~~  "
 "       BOTTOM                  "
